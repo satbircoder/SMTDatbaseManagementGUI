@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Tooltip?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="677.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smtdatabaseapp.SMTAppController">
+   <children>
+      <Button fx:id="buttonCreateDB" alignment="CENTER" layoutX="225.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleCreateDBAction" prefHeight="25.0" prefWidth="230.0" text="(Re)Create Database/Table/Record" >
+      <font>
+         <Font name="System Bold" size="12.0" />
+         </font>
+         <tooltip><Tooltip text = "Click to create new Database" /></tooltip>
+      </Button>
+      <TextField fx:id="custName" alignment="CENTER" layoutX="36.0" layoutY="63.0" promptText="Name" />
+      <TextField fx:id="custEmail" alignment="CENTER" layoutX="191.0" layoutY="63.0" promptText="Email" />
+      <TextField fx:id="custPhnNo" alignment="CENTER" layoutX="348.0" layoutY="63.0" promptText="Phone No" />
+      <Button fx:id="buttonAdd" layoutX="503.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleAddData" prefHeight="25.0" prefWidth="85.0" text="Add">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <tooltip><Tooltip text = "Click to Add new Record" /></tooltip>
+      </Button>
+      <TextField fx:id="custID" alignment="CENTER" layoutX="14.0" layoutY="106.0" prefHeight="25.0" prefWidth="101.0" promptText="ID" />
+      <Button fx:id="buttonDelete" layoutX="122.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleDeleteData" prefHeight="25.0" prefWidth="85.0" text="Delete">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <tooltip><Tooltip text = "Click to Delete any Record" /></tooltip>
+      </Button>
+      <Button fx:id="buttonSearch" layoutX="216.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="85.0" text="Search">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <tooltip><Tooltip text = "Click to serach record in Database" /></tooltip>
+      </Button>
+      <TextField fx:id="custIdUpdate" editable="false" alignment="CENTER" layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="101.0" promptText="ID" />
+      <TextField fx:id="custNameUpdate" alignment="CENTER" layoutX="122.0" layoutY="142.0" promptText="Name" />
+      <TextField fx:id="custEmailUpdate" alignment="CENTER" layoutX="274.0" layoutY="142.0" promptText="Email" />
+      <TextField fx:id="custPhnUpdate" alignment="CENTER" layoutX="429.0" layoutY="142.0" promptText="Phone No" />
+      <Button fx:id="buttonUpdate" layoutX="588.0" layoutY="142.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="25.0" prefWidth="85.0" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <tooltip><Tooltip text = "Click to update any existing record" /></tooltip>
+      </Button>
+      <Button fx:id="buttonDisplay" alignment="CENTER" layoutX="453" layoutY="173.0" mnemonicParsing="false" onAction="#handleDisplayAction" prefHeight="25.0" prefWidth="219.0" text="Show All Customers"> 
+      <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <tooltip><Tooltip text = "Click to display records" /></tooltip>
+      </Button>
+      <TableView fx:id="tableCustomer" layoutX="10.0" layoutY="204.0" onMouseClicked="#showRowData" prefHeight="242.0" prefWidth="662.0">
+        <columns>
+          <TableColumn fx:id="idTable" prefWidth="134.0" text="CUST_ID" />
+          <TableColumn fx:id="nameTable" minWidth="0.0" prefWidth="170.0" text="NAME" />
+            <TableColumn fx:id="emailTable" prefWidth="178.0" text="EMAIL" />
+            <TableColumn fx:id="mobileTable" prefWidth="178.0" text="MOBILE" />
+        </columns>
+      </TableView>
+      <TextField fx:id="messageBox" editable="false" layoutX="10.0" layoutY="173.0" prefHeight="25.0" prefWidth="441.0" promptText="Message:" />
+   </children>
+</Pane>
